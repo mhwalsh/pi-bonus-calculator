@@ -15,7 +15,7 @@ function calcBonus(anEmployee) {
   // marshal variables
   var empName = anEmployee[0];
   var empNumber = anEmployee[1];
-  var empSalary = anEmployee [2];
+  var empSalary = Number(anEmployee [2]);
   var empRating = anEmployee[3];
 
   console.log('processing,', empName);
@@ -46,6 +46,11 @@ function calcBonus(anEmployee) {
   // employee number is 4 digits, recieve addition 5%
   if(empNumber.length <= 4){
     bonusPercent += 0.05;
+  }
+
+  //if annual income is greater than 65000
+  if(empSalary >= 65000){
+    bonusPercent -= 0.01;
   }
 
   console.log('bonusPercent = ', bonusPercent);
