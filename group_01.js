@@ -4,3 +4,7 @@ var boo = ["Boo", "11435", "54000", 3];
 var scout = ["Scout", "6243", "74750", 5];
 
 var employees = [atticus, jem, boo, scout];
+
+for (var i = 0; i < employees.length; i++) {
+  console.log(employees[i][0]);
+}
