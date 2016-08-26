@@ -58,10 +58,20 @@ function calcBonus(anEmployee) {
       bonusPercent = 0.13;
   }
 
-  console.log('bonusPercent = ', bonusPercent);
+  //calculate bonus
+  var bonus = Math.round(empSalary * bonusPercent);
+  var adjustedSalary = empSalary + bonus;
+
+  // console.log('bonus =', bonus);
+  // console.log('adjustedSalary =', adjustedSalary);
+
+  //[name, percent bonus, adjustedSalary, total bonus rounded]
+  var newEmpArr = [empName, bonusPercent, adjustedSalary, bonus];
+
+  return newEmpArr;
 }
 
 // -- Main Execution -- //
 for (var i = 0; i < employees.length; i++) {
-  calcBonus(employees[i]);
+  console.log(calcBonus(employees[i]));
 }
