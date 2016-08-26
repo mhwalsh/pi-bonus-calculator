@@ -16,9 +16,9 @@ function calcBonus(anEmployee) {
   var empName = anEmployee[0];
   var empNumber = anEmployee[1];
   var empSalary = Number(anEmployee [2]);
-  var empRating = anEmployee[3];
+  var empRating = Number(anEmployee[3]);
 
-  console.log('processing,', empName);
+  console.log('Processing', empName);
 
   var bonusPercent; // in decimal
   //employee rating bonus calcuation
@@ -62,13 +62,17 @@ function calcBonus(anEmployee) {
   var bonus = Math.round(empSalary * bonusPercent);
   var adjustedSalary = empSalary + bonus;
 
-  // console.log('bonus =', bonus);
-  // console.log('adjustedSalary =', adjustedSalary);
-
   //[name, percent bonus, adjustedSalary, total bonus rounded]
-  var newEmpArr = [empName, bonusPercent, adjustedSalary, bonus];
+  var bonusPercentFormatted = bonusPercent.toLocaleString('percent', {style: 'percent'});
+
+  var newEmpArr = [empName, bonusPercentFormatted, toUsd(adjustedSalary), toUsd(bonus)];
 
   return newEmpArr;
+}
+
+//helper function to formate dollar amount
+function toUsd(dollarAmount){
+  return dollarAmount.toLocaleString('USD', {style: 'currency', currency: 'USD'});
 }
 
 // -- Main Execution -- //
