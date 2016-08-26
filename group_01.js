@@ -53,8 +53,12 @@ function calcBonus(anEmployee) {
     bonusPercent -= 0.01;
   }
 
-  console.log('bonusPercent = ', bonusPercent);
+  //if final percentage is greater than 13%, reduce to 13%
+  if(bonusPercent > 0.13){
+      bonusPercent = 0.13;
+  }
 
+  console.log('bonusPercent = ', bonusPercent);
 }
 
 // -- Main Execution -- //
