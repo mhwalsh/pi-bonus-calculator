@@ -43,7 +43,13 @@ function calcBonus(anEmployee) {
       bonusPercent = 0.0;
   }
 
+  // employee number is 4 digits, recieve addition 5%
+  if(empNumber.length <= 4){
+    bonusPercent += 0.05;
+  }
+
   console.log('bonusPercent = ', bonusPercent);
+
 }
 
 // -- Main Execution -- //
