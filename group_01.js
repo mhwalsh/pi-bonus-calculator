@@ -18,12 +18,32 @@ function calcBonus(anEmployee) {
   var empSalary = anEmployee [2];
   var empRating = anEmployee[3];
 
-  console.log('empName =', empName);
-  console.log('empNumber =', empNumber);
-  console.log('empSalary =', empSalary);
-  console.log('empRating =', empRating);
+  console.log('processing,', empName);
 
-  //
+  var bonusPercent; // in decimal
+  //employee rating bonus calcuation
+  switch (empRating) {
+    case 0:
+    case 1:
+    case 2:
+      // 2 or below - no bonus
+      bonusPercent = 0.0;
+      break;
+    case 3:
+      bonusPercent = 0.04;
+      break;
+    case 4:
+      bonusPercent = 0.06;
+      break;
+    case 5:
+      bonusPercent = 0.10;
+      break;
+    default:
+      console.log('Not a valid rating!');
+      bonusPercent = 0.0;
+  }
+
+  console.log('bonusPercent = ', bonusPercent);
 }
 
 // -- Main Execution -- //
