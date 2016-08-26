@@ -5,7 +5,6 @@ var scout = ["Scout", "6243", "74750", 5];
 
 var employees = [atticus, jem, boo, scout];
 
-//throw in somthing
 for (var i = 0; i < employees.length; i++) {
   console.log(employees[i][0]);
 }
