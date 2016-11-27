@@ -22,23 +22,20 @@ function calcBonus(anEmployee) {
 
   var bonusPercent; // in decimal
   //employee rating bonus calcuation
-  switch (empRating) {
-    case 0:
-    case 1:
-    case 2:
-      // 2 or below - no bonus
-      bonusPercent = 0.0;
-      break;
-    case 3:
-      bonusPercent = 0.04;
-      break;
-    case 4:
-      bonusPercent = 0.06;
-      break;
-    case 5:
-      bonusPercent = 0.10;
-      break;
-    default:
+
+  if(empRating <= 2){
+    bonusPercent = 0.0;
+
+  }else if (empRating === 3) {
+    bonusPercent = 0.04;
+
+  }else if (empRating === 4) {
+    bonusPercent = 0.06;
+
+  }else if (empRating === 5) {
+    bonusPercent = 0.10;
+    
+  }else {
       console.log('Not a valid rating!');
       bonusPercent = 0.0;
   }
